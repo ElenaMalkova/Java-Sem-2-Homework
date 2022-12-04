@@ -1,5 +1,4 @@
 
-
 // Дана строка sql-запроса "select * from students where ".
 // Сформируйте часть WHERE этого запроса, используя StringBuilder.
 // Данные для фильтрации приведены ниже в виде json строки.
@@ -17,14 +16,12 @@ public class task1 {
             db[i].replace('"', ' '); // избавились от кавычек
             String[] elements = db[i].split(":"); // разбили каждый элемент db на новый массив из 2 строк
             if (elements[1] != "null" & i < db.length - 2) {
-                sb.append(elements[0]).append(" = ").append(elements[1]).append(" and "); // добавили and если элемент
-                                                                                          // не последний
+                sb.append(elements[0]).append(" = ").append(elements[1]).append(" and "); // добавили and 
             }
             if (elements[1] != "null" & i == db.length - 2) {
-                sb.append(elements[0]).append(" = ").append(elements[1]);
+                sb.append(elements[0]).append(" = ").append(elements[1]); // закончили перечисление
             }
-            ;
-
+            
         }
         System.out.println(sb);
     }
